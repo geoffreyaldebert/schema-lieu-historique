@@ -1,0 +1,130 @@
+{
+   "$schema":"https://specs.frictionlessdata.io/schemas/table-schema.json",
+   "name":"personnage-historique",
+   "title":"Schéma des lieux historiques",
+   "description":"Spécification du fichier d'échange relatif aux lieux historiques",
+   "keywords":[
+      "lieux",
+      "lieu",
+      "historique",
+      "histoire"
+   ],
+   "countryCode":"FR",
+   "homepage":"https://github.com/geoffreyaldebert/schema-lieu-historique",
+   "path":"https://github.com/geoffreyaldebert/schema-lieu-historique/raw/v0.1.1/schema.json",
+   "resources":[
+      {
+         "title":"Fichier valide (CSV)",
+         "name":"exemple-valide-csv",
+         "path":"https://github.com/geoffreyaldebert/schema-lieu-historique/raw/v0.1.1/exemple-valide.csv"
+      }
+   ],
+   "created":"2020-10-10",
+   "lastModified":"2020-10-10",
+   "version":"0.1.1",
+   "contributors":[
+      {
+         "title":"Geoffrey Aldebert",
+         "email":"geoffrey.aldebert@gmail.com",
+         "organisation":"Geoffrey Aldebert",
+         "role":"author"
+      }
+   ],
+   "fields":[
+      {
+         "name":"nom",
+         "description":"Nom du lieu",
+         "example":"Notre-Dame de Paris, Hopital de la Rochefoucauld",
+         "type":"string",
+         "constraints":{
+            "required":true
+         }
+      },
+      {
+         "name":"categorie",
+         "description":"Catégorie du personnage",
+         "example":"Sciences",
+         "type":"string",
+         "constraints":{
+             "required":true,
+             "enum":[
+                 "Politique",
+                 "Religion",
+                 "Sciences",
+                 "Arts",
+                 "Société",
+                 "Commerce",
+                 "Environnement",
+                 "Urbanisme"
+             ]
+         }
+     },
+     {
+         "name": "Xlongitude",
+         "description": "La longitude en degrés décimaux (point comme séparateur décimal) de la localisation du lieu exprimée dans le système de coordonnées WGS84",
+         "example": "7.48710500",
+         "type": "number",
+         "constraints": {
+            "required": true
+         }
+      },
+      {
+         "name": "Ylatitude",
+         "description": "La latitude en degrés décimaux (point comme séparateur décimal) de la localisation du lieu exprimée le système de coordonnées WGS84",
+         "example": "47.63495500",
+         "type": "number",
+         "constraints": {
+            "required": true
+         }
+      },
+      {
+          "name":"toujours_existant",
+          "description":"Le lieu est-il toujours existant",
+          "example":"true",
+          "type":"boolean",
+          "constraints":{
+              "required":true
+          }
+      },
+     {
+         "name":"date_construction",
+         "description":"Date de construction du lieu. Notation ISO 8601, format AAAA-MM-DD",
+         "example":"1845-10-31",
+         "type":"date",
+         "format":"%Y-%m-%d",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+          "name":"date_destruction",
+          "description":"Date de destruction du lieu. Notation ISO 8601, format AAAA-MM-DD",
+          "example":"1915-04-23",
+          "type":"date",
+          "format":"%Y-%m-%d",
+          "constraints":{
+             "required":false
+          }
+       },
+       {
+         "name":"complement",
+         "description":"Complément libre sur le personnage",
+         "example":"Texte long",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+          "name": "url",
+          "description": "Url source sur le personnage",
+          "example": "http://monpersonnage.com",
+          "type": "string",
+          "format": "uri",
+          "constraints": {
+              "required": false
+          }
+      }
+   ]
+}
+
