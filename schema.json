@@ -62,22 +62,24 @@
         ]
      },
      {
-         "name": "Xlongitude",
+         "name": "longitude",
          "description": "La longitude en degrés décimaux (point comme séparateur décimal) de la localisation du lieu exprimée dans le système de coordonnées WGS84",
          "example": "7.48710500",
          "type": "number",
          "constraints": {
             "required": true
-         }
+         },
+         "location":true
       },
       {
-         "name": "Ylatitude",
+         "name": "latitude",
          "description": "La latitude en degrés décimaux (point comme séparateur décimal) de la localisation du lieu exprimée le système de coordonnées WGS84",
          "example": "47.63495500",
          "type": "number",
          "constraints": {
             "required": true
-         }
+         },
+         "location":true
       },
       {
           "name":"toujours_existant",
