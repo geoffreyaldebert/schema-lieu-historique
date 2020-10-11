@@ -42,22 +42,24 @@
       },
       {
          "name":"categorie",
-         "description":"Catégorie du personnage",
+         "description":"Catégorie du lieu",
          "example":"Sciences",
          "type":"string",
          "constraints":{
              "required":true,
-             "enum":[
-                 "Politique",
-                 "Religion",
-                 "Sciences",
-                 "Arts",
-                 "Société",
-                 "Commerce",
-                 "Environnement",
-                 "Urbanisme"
-             ]
-         }
+             "pattern":"(?:(?:^|,)(Politique|Religion|Sciences|Arts|Société|Commerce|Environnement|Urbanisme))+$"
+         },
+         "multiEnum": true,
+         "multiEnumList":[
+            "Politique",
+            "Religion",
+            "Sciences",
+            "Arts",
+            "Société",
+            "Commerce",
+            "Environnement",
+            "Urbanisme"
+        ]
      },
      {
          "name": "Xlongitude",
