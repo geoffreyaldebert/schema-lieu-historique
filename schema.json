@@ -44,9 +44,10 @@
          "name":"categorie",
          "description":"Catégorie du lieu",
          "example":"Sciences",
-         "type":"array",
+         "type":"string",
          "constraints":{
-             "required":true
+             "required":true,
+             "pattern":"(?:(?:^|,)(Politique|Religion|Sciences|Arts|Société|Commerce|Environnement|Urbanisme))+$"
          },
          "multiEnum": true,
          "multiEnumList":[
